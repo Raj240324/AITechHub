@@ -1,0 +1,87 @@
+// Upcoming batches data with dates for countdown timer
+export const batches = [
+  {
+    id: 'batch-mern-feb-2026',
+    courseId: 'full-stack-web-dev',
+    courseName: 'Full Stack Web Development (MERN Stack)',
+    startDate: '2026-02-10T10:00:00',
+    duration: '24 Weeks',
+    mode: 'Hybrid (Online + Offline)',
+    timing: 'Mon-Fri, 10:00 AM - 1:00 PM',
+    totalSeats: 30,
+    seatsLeft: 8,
+    instructor: 'Arun Kumar',
+    price: 'Request Fee Details',
+    highlights: ['Live Projects', 'Job Assistance', 'NASSCOM Certified']
+  },
+  {
+    id: 'batch-python-feb-2026',
+    courseId: 'python-programming',
+    courseName: 'Python Full Stack Development',
+    startDate: '2026-02-15T14:00:00',
+    duration: '20 Weeks',
+    mode: 'Online',
+    timing: 'Mon-Fri, 2:00 PM - 5:00 PM',
+    totalSeats: 25,
+    seatsLeft: 12,
+    instructor: 'Priya Sharma',
+    price: 'Request Fee Details',
+    highlights: ['Django & Flask', 'API Development', 'Cloud Deployment']
+  },
+  {
+    id: 'batch-java-mar-2026',
+    courseId: 'java-programming',
+    courseName: 'Java Full Stack Development',
+    startDate: '2026-03-01T09:00:00',
+    duration: '22 Weeks',
+    mode: 'Offline',
+    timing: 'Mon-Sat, 9:00 AM - 12:00 PM',
+    totalSeats: 35,
+    seatsLeft: 20,
+    instructor: 'Senthil Kumar',
+    price: 'Request Fee Details',
+    highlights: ['Spring Boot', 'Microservices', 'Enterprise Projects']
+  },
+  {
+    id: 'batch-data-science-mar-2026',
+    courseId: 'data-science-ai',
+    courseName: 'Data Science & Artificial Intelligence',
+    startDate: '2026-03-10T10:00:00',
+    duration: '28 Weeks',
+    mode: 'Hybrid (Online + Offline)',
+    timing: 'Mon-Fri, 10:00 AM - 1:00 PM',
+    totalSeats: 20,
+    seatsLeft: 6,
+    instructor: 'Dr. Lakshmi Venkat',
+    price: 'Request Fee Details',
+    highlights: ['Machine Learning', 'Deep Learning', 'Capstone Project']
+  },
+  {
+    id: 'batch-uiux-feb-2026',
+    courseId: 'ui-ux-design',
+    courseName: 'UI/UX Design Strategy',
+    startDate: '2026-02-20T11:00:00',
+    duration: '12 Weeks',
+    mode: 'Online',
+    timing: 'Mon-Wed-Fri, 11:00 AM - 2:00 PM',
+    totalSeats: 20,
+    seatsLeft: 14,
+    instructor: 'Meera Krishnan',
+    price: 'Request Fee Details',
+    highlights: ['Figma Mastery', 'Portfolio Building', 'Design Systems']
+  },
+  {
+    id: 'batch-devops-apr-2026',
+    courseId: 'cloud-devops',
+    courseName: 'Cloud Computing & DevOps',
+    startDate: '2026-04-01T10:00:00',
+    duration: '16 Weeks',
+    mode: 'Online',
+    timing: 'Tue-Thu-Sat, 10:00 AM - 1:00 PM',
+    totalSeats: 25,
+    seatsLeft: 18,
+    instructor: 'Rajesh Babu',
+    price: 'Request Fee Details',
+    highlights: ['AWS Certified', 'Docker & Kubernetes', 'CI/CD Pipelines']
+  }
+];
