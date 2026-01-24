@@ -14,69 +14,84 @@ const TermsConditions = () => {
       <div className="container-custom section-padding">
         <div className="max-w-4xl mx-auto prose prose-slate prose-lg">
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Agreement to Terms</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Acceptance of Terms</h2>
             <p className="text-slate-600 mb-4">
-              By accessing our website and enrolling in our courses, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you must not use our services.
+              By enrolling in courses at Raj Software Institute (online or offline), you agree to abide by these Terms and Conditions. These terms constitute a binding agreement between the student ("You") and the Institute regarding academic and administrative policies.
             </p>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Admission & Enrollment</h2>
-            <p className="text-slate-600 mb-4">
-              Admission to any course is subject to eligibility criteria and availability of seats. We reserve the right to refuse admission to any candidate without providing a reason. Enrollment is confirmed only after the payment of the prescribed fees.
-            </p>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">3. Fees & Refund Policy</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Admission & Fees</h2>
             <ul className="list-disc pl-6 text-slate-600 space-y-2">
-              <li>Course fees must be paid in full or as per the agreed EMI schedule.</li>
-              <li>Registration fees are non-refundable under any circumstances.</li>
-              <li>Refund requests for course fees will only be considered if made within 7 days of enrollment and before the start of the batch.</li>
-              <li>We reserve the right to change the fee structure at any time, but this will not affect students who have already enrolled.</li>
+              <li><strong>Registration:</strong> Admission is confirmed only after the payment of the registration fee, which is non-refundable.</li>
+              <li><strong>Tuition Fees:</strong> Full course fees must be paid before the commencement of the batch or as per the approved installment schedule (EMI).</li>
+              <li><strong>Late Payment:</strong> Failure to pay installments on time may result in suspension of access to classes and the Learning Management System (LMS).</li>
+              <li><strong>Refunds:</strong> Course fees are strictly non-refundable once the batch has commenced. Refund requests made 7 days prior to the batch start date may be considered subject to a processing fee.</li>
+            </ul>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">3. Academic Policies</h2>
+            <ul className="list-disc pl-6 text-slate-600 space-y-2">
+              <li><strong>Attendance:</strong> A minimum of 85% attendance is mandatory to be eligible for placement assistance and certification.</li>
+              <li><strong>Assignments:</strong> Students must submit all project milestones and assignments on time. Late submissions may impact the final grade.</li>
+              <li><strong>Certification:</strong> Course completion certificates will be issued only after the successful submission and defense of the final capstone project.</li>
             </ul>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">4. Code of Conduct</h2>
             <p className="text-slate-600 mb-4">
-              Students are expected to maintain professional decorum during classes and interactions with faculty and peers. Any form of harassment, cheating, or plagiarism will result in immediate termination of enrollment without refund.
+              We maintain a strict zero-tolerance policy towards:
             </p>
+            <ul className="list-disc pl-6 text-slate-600 space-y-2">
+              <li>Harassment or discrimination of any kind towards peers or faculty.</li>
+              <li>Plagiarism in code submissions or projects.</li>
+              <li>Unauthorized recording or distribution of classroom lectures.</li>
+              <li>Damage to institute property or hardware.</li>
+            </ul>
+            <p className="text-slate-600 mt-4">Violation of these rules may lead to immediate expulsion without a refund.</p>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Intellectual Property & Training Materials</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Placement Assistance</h2>
             <p className="text-slate-600 mb-4">
-              All project source code, curriculum guides, and recorded sessions provided by Raj Software Institute are proprietary. They are licensed to you for personal learning purposes only. Redistribution, resale, or public sharing of these materials is strictly prohibited and may lead to legal action.
+              Our "100% Placement Support" includes resume building, mock interviews, and sharing profiles with hiring partners. However:
             </p>
+            <ul className="list-disc pl-6 text-slate-600 space-y-2">
+              <li>Placement is not a guarantee of a job offer; it depends on your performance in the actual interviews.</li>
+              <li>Students who fail to clear internal assessments or mock interviews will not be forwarded to external companies until they improve.</li>
+              <li>Refusing three consecutive interview opportunities may lead to the suspension of placement support.</li>
+            </ul>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">6. Placement Assistance</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">6. Intellectual Property</h2>
             <p className="text-slate-600 mb-4">
-              While we provide comprehensive placement assistance, we do not guarantee employment. Placement depends on the student's performance in interviews and the requirements of the hiring companies.
+              All learning materials, including source code templates, slide decks, and recorded videos provided by Raj Software Institute, are our exclusive, proprietary content. They are licensed to you for personal educational use only. You are strictly prohibited from redistributing, reselling, or uploading these materials to public platforms.
             </p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">7. Limitation of Liability</h2>
             <p className="text-slate-600 mb-4">
-              Raj Software Training Institute shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use our services or for the cost of procurement of substitute services.
-            </p>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">8. Governing Law</h2>
-            <p className="text-slate-600 mb-4">
-              These Terms and Conditions shall be governed by and construed in accordance with the laws of India. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the courts in Bangalore.
+              Raj Software Institute is an educational provider. We shall not be liable for any indirect, incidental, or consequential damages arising from the use of our training services. Our liability is limited to the total fees paid by the student.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">9. Contact Information</h2>
-            <p className="text-slate-600">
-              If you have any questions regarding these Terms and Conditions, please contact us at legal@rajinstitute.com.
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">8. Governing Law & Contact</h2>
+            <p className="text-slate-600 mb-4">
+              These terms are governed by the laws of India. Any disputes are subject to the exclusive jurisdiction of the courts in Chengalpattu.
             </p>
+            <p className="text-slate-600">
+              For legal inquiries, please reach out to us at:
+            </p>
+            <div className="mt-6 p-8 bg-slate-50 border border-slate-100 rounded-3xl">
+              <p className="font-black text-lg text-slate-900 mb-2">Raj Software Institute</p>
+              <p className="text-slate-600 mb-4">1/92, Kannadasan 2nd St, NH3, Maraimalai Nagar - 603209</p>
+              <p className="text-slate-700 font-medium">Email: <span className="text-primary">contact@rajinstitute.in</span></p>
+            </div>
           </section>
         </div>
       </div>

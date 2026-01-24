@@ -7,6 +7,8 @@ import { useModal } from '../context/ModalContext';
 
 import Hero from '../components/ui/Hero';
 
+import { BRANDING } from '../data/branding';
+
 const Contact = () => {
   const { openModal } = useModal();
   const location = useLocation();
@@ -17,20 +19,20 @@ const Contact = () => {
     {
       icon: <Phone className="h-6 w-6 text-primary" />,
       title: "Call Us",
-      details: "+91 63839 80415",
+      details: BRANDING.phone,
       description: "Mon-Sat from 9am to 7pm."
     },
     {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: "Email Us",
-      details: "contact@rajinstitute.in",
+      details: BRANDING.email,
       description: "We'll respond within 24 hours."
     },
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,
       title: "Visit Us",
       details: "1/92, Kannadasan 2nd St",
-      description: "NH3, Maraimalai Nagar - 603209"
+      description: `${BRANDING.location} - 603209`
     }
   ];
 

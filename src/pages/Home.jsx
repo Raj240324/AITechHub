@@ -640,30 +640,41 @@ const learningPartners = [
         </div>
       </section>
 
-      {/* Download Brochure CTA */}
+      {/* Career Counseling CTA */}
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="bg-gradient-to-br from-primary to-blue-700 rounded-[3rem] p-10 md:p-16 text-white text-center relative overflow-hidden shadow-2xl shadow-primary/20">
             <div className="absolute top-0 left-0 w-full h-full opacity-10">
-              <div className="absolute top-10 left-10 w-40 h-40 rounded-full border-8 border-white" />
-              <div className="absolute bottom-10 right-10 w-60 h-60 rounded-full border-8 border-white" />
+              <div className="absolute top-[-50%] left-[-20%] w-[80%] h-[80%] bg-white/10 rounded-full blur-[100px]" />
+              <div className="absolute bottom-[-50%] right-[-20%] w-[80%] h-[80%] bg-white/5 rounded-full blur-[100px]" />
             </div>
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <Download className="h-16 w-16 mx-auto mb-8 text-white/50" />
-              <h2 className="text-3xl md:text-5xl font-black mb-6">Download Our <span className="text-white/80">2026</span> Career Guide</h2>
-              <p className="text-xl text-white/80 mb-10 leading-relaxed">
-                Get a comprehensive look at our courses, syllabus, placement record, and the Raj Institute success roadmap.
+            <div className="relative z-10 max-w-4xl mx-auto">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 rounded-3xl mb-8 backdrop-blur-sm border border-white/20">
+                <Users className="h-10 w-10 text-white" />
+              </div>
+              <h2 className="text-3xl md:text-5xl font-black mb-6">Confused About Your Career Path?</h2>
+              <p className="text-xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
+                Don't guess your future. Speak to our expert career counselors for a <span className="font-bold text-white border-b-2 border-white/40">free 1:1 session</span>. We'll analyze your skills and suggest the perfect roadmap for 2026.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <button 
-                  onClick={() => openModal('Download Brochure')}
-                  className="bg-white text-primary font-bold px-10 py-4 rounded-2xl hover:bg-slate-50 transition-all flex items-center shadow-xl shadow-black/10 text-lg"
+                  onClick={() => openModal('Career Counseling')}
+                  className="bg-white text-primary font-bold px-10 py-5 rounded-2xl hover:bg-slate-50 transition-all flex items-center shadow-xl shadow-black/20 text-lg group"
                 >
-                  Download Free PDF <Download className="ml-2 h-5 w-5" />
+                  Book Free Session <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <div className="text-left hidden sm:block">
-                  <p className="text-sm font-bold uppercase tracking-widest text-white/60">File Details</p>
-                  <p className="text-sm font-medium">PDF • 4.2 MB • Updated Weekly</p>
+                <div className="text-left hidden sm:flex items-center space-x-4 bg-white/10 px-6 py-3 rounded-xl border border-white/10 backdrop-blur-sm">
+                  <div className="flex -space-x-3">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className="w-8 h-8 rounded-full border-2 border-white/50 overflow-hidden">
+                        <img src={`https://i.pravatar.cc/100?u=counselor${i}`} alt="Counselor" />
+                      </div>
+                    ))}
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-widest text-white/60">Available Now</p>
+                    <p className="text-xs font-bold text-white">3 Counselors Online</p>
+                  </div>
                 </div>
               </div>
             </div>

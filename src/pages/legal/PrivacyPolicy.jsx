@@ -16,71 +16,72 @@ const PrivacyPolicy = () => {
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Introduction</h2>
             <p className="text-slate-600 mb-4">
-              Raj Software Training Institute ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or enroll in our training programs.
+              Welcome to Raj Software Institute. We are committed to protecting your personal data and ensuring transparency in how we handle it. This Privacy Policy details the types of information we collect when you enroll in our courses, visit our campus in Maraimalai Nagar, or use our digital platforms.
             </p>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Information We Collect</h2>
-            <p className="text-slate-600 mb-4">We may collect personal information that you provide to us, including but not limited to:</p>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Information Collection</h2>
+            <p className="text-slate-600 mb-4">We collect data necessary to provide educational and placement services:</p>
             <ul className="list-disc pl-6 text-slate-600 space-y-2">
-              <li>Contact Information (name, email address, phone number, mailing address)</li>
-              <li>Educational and Professional Background</li>
-              <li>Payment Information (processed through secure third-party payment gateways)</li>
-              <li>Information provided in contact forms or during counseling sessions</li>
+              <li><strong>Personal Identity:</strong> Name, Date of Birth, and Government ID (for certification).</li>
+              <li><strong>Contact Details:</strong> Phone Number, Email Address, and Residential Address.</li>
+              <li><strong>Academic Records:</strong> Educational qualifications, mark sheets, and portfolio projects.</li>
+              <li><strong>Attendance & Performance:</strong> Daily attendance logs, assessment scores, and project submissions.</li>
             </ul>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">3. How We Use Your Information</h2>
-            <p className="text-slate-600 mb-4">We strictly use your data for academic and placement purposes:</p>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">3. Utilization of Data</h2>
+            <p className="text-slate-600 mb-4">Your information is strictly used for:</p>
             <ul className="list-disc pl-6 text-slate-600 space-y-2">
-              <li>To facilitate student enrollment and maintain academic records.</li>
-              <li>To coordinate with hiring partners for placement interviews.</li>
-              <li>To issue NASSCOM-aligned certifications upon course completion.</li>
-              <li>To communicate crucial updates regarding batch timings or cancellations.</li>
-              <li>To improve our curriculum based on student feedback and performance metrics.</li>
+              <li><strong>Academic Administration:</strong> Creating student profiles, tracking progress, and issuing course completion certificates.</li>
+              <li><strong>Placement Services:</strong> We share your resume and technical portfolio with our hiring partners (MNCs and Startups) for recruitment purposes.</li>
+              <li><strong>Communication:</strong> Sharing class schedules, holiday alerts, and workshop notifications via WhatsApp or Email.</li>
+              <li><strong>Certification:</strong> Submitting necessary details to NASSCOM or other accreditation bodies for official certification.</li>
             </ul>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">4. Data Security</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">4. Data Sharing & Third Parties</h2>
             <p className="text-slate-600 mb-4">
-              We implement appropriate technical and organizational security measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.
+              We do not sell your personal data. However, we may share specific information with:
+            </p>
+            <ul className="list-disc pl-6 text-slate-600 space-y-2">
+              <li><strong>Hiring Partners:</strong> To facilitate interview scheduling and job offers.</li>
+              <li><strong>Payment Gateways:</strong> For processing tuition fees securely (e.g., Razorpay, Stripe).</li>
+              <li><strong>Legal Authorities:</strong> If required by law or to protect our rights and safety.</li>
+            </ul>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Student Rights</h2>
+            <p className="text-slate-600 mb-4">
+              As a student, you have the right to request access to your academic records, correct any inaccuracies in your profile, and request the deletion of your data post-completion (subject to retention required for official verification purposes).
             </p>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Third-Party Services</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">6. Media & Testimonials</h2>
             <p className="text-slate-600 mb-4">
-              We may use third-party services for payment processing, website analytics, and communication (e.g., EmailJS, Google Analytics). These third parties have their own privacy policies and we recommend you review them.
-            </p>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">6. Your Rights</h2>
-            <p className="text-slate-600 mb-4">
-              You have the right to access, correct, or delete your personal information. You may also object to or restrict certain processing of your data. To exercise these rights, please contact us at privacy@rajinstitute.com.
-            </p>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">7. Changes to This Policy</h2>
-            <p className="text-slate-600 mb-4">
-              We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.
+              During events, workshops, or classes, we may capture photographs or videos. We reserve the right to use these visuals for marketing purposes on our website and social media. If you wish to opt-out, please notify the management in writing during enrollment.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">8. Contact Us</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">7. Contact & Grievance Officer</h2>
             <p className="text-slate-600">
-              If you have any questions or concerns about this Privacy Policy, please contact us at:
+              For any privacy-related queries or to exercise your data rights, please contact our administrative office:
             </p>
-            <div className="mt-4 p-6 bg-slate-100 rounded-2xl">
-              <p className="font-bold text-slate-900">Raj Software Training Institute</p>
-              <p className="text-slate-600">123 Tech Park, Silicon Valley, Bangalore - 560001</p>
-              <p className="text-slate-600">Email: info@rajinstitute.com</p>
-              <p className="text-slate-600">Phone: +91 98765 43210</p>
+            <div className="mt-6 p-8 bg-slate-50 border border-slate-100 rounded-3xl">
+              <p className="font-black text-lg text-slate-900 mb-2">Raj Software Institute</p>
+              <p className="text-slate-600 mb-1">1/92, Kannadasan 2nd St, NH3</p>
+              <p className="text-slate-600 mb-4">Maraimalai Nagar - 603209, Chengalpattu District</p>
+              
+              <div className="flex flex-col space-y-2 text-sm font-medium">
+                <p className="text-slate-700">Email: <span className="text-primary">contact@rajinstitute.in</span></p>
+                <p className="text-slate-700">Phone: <span className="text-primary">+91 63839 80415</span></p>
+              </div>
             </div>
           </section>
         </div>
