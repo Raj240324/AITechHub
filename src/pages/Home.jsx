@@ -673,8 +673,9 @@ const learningPartners = [
 
       {/* Corporate Training Section */}
       <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-5">
-          <Building2 size={400} className="absolute -top-20 -left-20" />
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px]" />
         </div>
         <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -780,9 +781,9 @@ const learningPartners = [
       <section className="py-20">
         <div className="container-custom">
           <div className="bg-primary rounded-[3rem] p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl shadow-primary/30">
-            <div className="absolute top-0 left-0 w-full h-full opacity-10">
-              <Code2 size={400} className="absolute -top-20 -left-20" />
-              <Cpu size={300} className="absolute -bottom-20 -right-20" />
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+              <div className="absolute top-[-50%] left-[-20%] w-[80%] h-[80%] bg-white/10 rounded-full blur-[100px]" />
+              <div className="absolute bottom-[-50%] right-[-20%] w-[80%] h-[80%] bg-white/5 rounded-full blur-[100px]" />
             </div>
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6">Start Your Journey Today?</h2>

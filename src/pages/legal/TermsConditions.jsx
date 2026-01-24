@@ -8,7 +8,7 @@ const TermsConditions = () => {
     <Layout>
       <Hero 
         title={<>Terms & <span className="text-primary">Conditions</span></>}
-        subtitle="Last Updated: January 23, 2026"
+        subtitle={`Last Updated: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`}
       />
 
       <div className="container-custom section-padding">
@@ -45,9 +45,9 @@ const TermsConditions = () => {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Intellectual Property</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Intellectual Property & Training Materials</h2>
             <p className="text-slate-600 mb-4">
-              All course materials, including videos, documents, and software provided during the training, are the intellectual property of Raj Software Training Institute. These materials are for your personal use only and may not be shared, reproduced, or distributed without our written consent.
+              All project source code, curriculum guides, and recorded sessions provided by Raj Software Institute are proprietary. They are licensed to you for personal learning purposes only. Redistribution, resale, or public sharing of these materials is strictly prohibited and may lead to legal action.
             </p>
           </section>
 

@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
     <Layout>
       <Hero 
         title={<>Privacy <span className="text-primary">Policy</span></>}
-        subtitle="Last Updated: January 23, 2026"
+        subtitle={`Last Updated: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`}
       />
 
       <div className="container-custom section-padding">
@@ -33,13 +33,13 @@ const PrivacyPolicy = () => {
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">3. How We Use Your Information</h2>
-            <p className="text-slate-600 mb-4">We use the collected information for various purposes, including:</p>
+            <p className="text-slate-600 mb-4">We strictly use your data for academic and placement purposes:</p>
             <ul className="list-disc pl-6 text-slate-600 space-y-2">
-              <li>To provide and manage our training services</li>
-              <li>To communicate with you regarding your admission, courses, and placement support</li>
-              <li>To process your payments and provide receipts</li>
-              <li>To send you promotional materials, newsletters, and updates (you can opt-out anytime)</li>
-              <li>To improve our website and training programs</li>
+              <li>To facilitate student enrollment and maintain academic records.</li>
+              <li>To coordinate with hiring partners for placement interviews.</li>
+              <li>To issue NASSCOM-aligned certifications upon course completion.</li>
+              <li>To communicate crucial updates regarding batch timings or cancellations.</li>
+              <li>To improve our curriculum based on student feedback and performance metrics.</li>
             </ul>
           </section>
 

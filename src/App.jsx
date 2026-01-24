@@ -26,7 +26,7 @@ const TermsConditions = lazy(() => import('./pages/legal/TermsConditions'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // New Pages
-const UpcomingBatches = lazy(() => import('./pages/UpcomingBatches'));
+
 const Gallery = lazy(() => import('./pages/Gallery'));
 
 
@@ -61,7 +61,6 @@ function App() {
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-conditions" element={<TermsConditions />} />
                 {/* New Pages */}
-                <Route path="/batches" element={<UpcomingBatches />} />
                 <Route path="/gallery" element={<Gallery />} />
 
                 {/* 404 Route */}
