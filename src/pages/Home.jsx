@@ -58,10 +58,10 @@ const FAQItem = ({ question, answer }) => {
 import Hero from '../components/ui/Hero';
 
 const learningPartners = [
-    { name: "NASSCOM", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d0/NASSCOM_Logo.png" },
-    { name: "ISO Certified", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b3/ISO_9001-2015.png" },
-    { name: "FutureSkills", logo: "https://futureskillsprime.in/sites/default/files/2021-03/fs-prime-logo.png" },
-    { name: "MSME", logo: "https://msme.gov.in/sites/default/files/msme_logo_0.png" }
+    { name: "NASSCOM", logo: "/nasscom-logo.webp" },
+    { name: "ISO Certified", logo: "/ISO.webp" },
+    { name: "FutureSkills", logo: "/future-skills.webp" },
+    { name: "MSME", logo: "/msme-logo.webp" }
   ];
 
   const Home = () => {
@@ -299,7 +299,7 @@ const learningPartners = [
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
             {learningPartners.map((partner, index) => (
               <div key={index} className="flex flex-col items-center group">
-                <div className="h-16 w-32 md:h-20 md:w-40 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+                <div className="h-16 w-32 md:h-20 md:w-40 flex items-center justify-center transition-all">
                   {partner.logo ? (
                     <img src={partner.logo} alt={partner.name} className="max-h-12 md:max-h-16 object-contain" />
                   ) : (
