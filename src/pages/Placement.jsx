@@ -6,7 +6,7 @@ import { useModal } from '../context/ModalContext';
 import { FadeIn, StaggerContainer, StaggerItem, ScaleOnHover, ScrollCountUp, Marquee } from '../components/utils/Animations';
 
 const placementStats = [
-  { label: 'Placement Rate', value: '100%', icon: <Briefcase className="h-6 w-6 text-primary" /> },
+  { label: 'Grooming Success', value: 'Expert', icon: <Briefcase className="h-6 w-6 text-primary" /> },
   { label: 'Hiring Partners', value: '500+', icon: <Building2 className="h-6 w-6 text-primary" /> },
   { label: 'Highest Package', value: '24 LPA', icon: <TrendingUp className="h-6 w-6 text-primary" /> },
   { label: 'Students Placed', value: '10,000+', icon: <Users className="h-6 w-6 text-primary" /> },
@@ -41,7 +41,7 @@ const testimonials = [
     company: "Zoho",
     role: "Full Stack Developer",
     image: "https://i.pravatar.cc/150?u=senthil",
-    quote: "The hands-on approach at Raj Institute is what sets them apart. I wasn't just learning syntax; I was building real products that helped me land a job at Zoho."
+    quote: "The hands-on approach at AITECHHUB is what sets them apart. I wasn't just learning syntax; I was building real products that helped me land a job at Zoho."
   },
   {
     name: "Priya Dharshini",
@@ -61,8 +61,7 @@ const testimonials = [
     name: "Akash Mehra",
     company: "Google",
     role: "Frontend Developer",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
-    quote: "The practical training and mock interviews at Raj Software Institute were instrumental in helping me land my dream job at Google."
+    quote: "The practical training and mock interviews at AITECHHUB were instrumental in helping me land my dream job at Google."
   }
 ];
 
@@ -81,8 +80,8 @@ const Placement = () => {
   const { openModal } = useModal();
   return (
     <Layout 
-      title="Placements | Raj Software Training Institute"
-      description="Check our placement records, hiring partners, and student success stories. We offer 100% placement assistance to all our students."
+      title="Placements | AITECHHUB Training Institute"
+      description="Check our placement grooming process, hiring partners, and student success stories. We offer comprehensive placement guidance to all our students."
     >
       <Hero 
         badge={
@@ -91,8 +90,8 @@ const Placement = () => {
             <span>No.1 Placement Institute in Tamil Nadu</span>
           </div>
         }
-        title={<>Your Career, Our <span className="text-primary">Commitment</span></>}
-        subtitle="Launch your tech career with Tamil Nadu's most trusted placement institute. Our dedicated placement cell works tirelessly to connect our students with 500+ top hiring partners across Tamil Nadu's IT Corridors."
+        title={<>Guidance for Placement to <span className="text-primary">Get Your Job</span></>}
+        subtitle="Launch your tech career with Tamil Nadu's most trusted mentor-led institute. We guide you for placement to help you get hired by top companies across Tamil Nadu's IT corridors."
       />
 
       {/* Regional Placement Success */}
@@ -164,7 +163,7 @@ const Placement = () => {
         </div>
       </section>
 
-      {/* Job Guarantee Section */}
+      {/* Career Grooming Section */}
       <section className="py-20 bg-primary/5 border-y border-primary/10">
         <div className="container-custom">
           <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-xl border border-primary/20 relative overflow-hidden">
@@ -172,24 +171,24 @@ const Placement = () => {
             <div className="relative z-10 text-center max-w-4xl mx-auto">
               <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary text-white text-sm font-bold uppercase tracking-widest mb-8 shadow-lg shadow-primary/30">
                 <Award className="h-4 w-4" />
-                <span>100% Job Guarantee Program</span>
+                <span>Expert Career Grooming Program</span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-8 leading-tight">
-                Your Dream Career is <span className="text-primary">Guaranteed.</span>
+                Your Path to a <span className="text-primary">Global Career.</span>
               </h2>
               <p className="text-base md:text-lg text-slate-600 mb-12 leading-relaxed">
-                We offer specialized job guarantee programs for candidates from all backgrounds. Whether you are a fresh graduate, have a career gap, or are looking to switch from Non-IT to IT, we have a path for you.
+                We offer specialized career grooming programs designed to make you industry-ready. Whether you are a fresh graduate, have a career gap, or are looking to switch from Non-IT to IT, we provide the preparation you need.
               </p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left mb-12">
                 {[
-                  "Any Degree / Diploma",
-                  "Career Gap Accepted",
-                  "Non-IT Professionals",
-                  "Final Year Students",
-                  "Immediate Joiners",
-                  "Working Professionals",
-                  "Career Restart for Women",
-                  "Passed Out Candidates"
+                  "Intensive Career Prep",
+                  "MNC Mock Interviews",
+                  "Soft Skills Excellence",
+                  "Resume Architecture",
+                  "Hiring Partner Access",
+                  "Technical Grooming",
+                  "Portfolio Building",
+                  "Post-Training Mentorship"
                 ].map((item, i) => (
                   <div key={i} className="flex items-center space-x-3 bg-slate-50 p-4 rounded-2xl border border-slate-100">
                     <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
@@ -201,7 +200,7 @@ const Placement = () => {
                 onClick={() => openModal()}
                 className="btn-primary px-12 py-5 text-lg shadow-2xl shadow-primary/40"
               >
-                Apply for Job Guarantee Program
+                Join Career Grooming Program
               </button>
             </div>
           </div>
@@ -219,7 +218,7 @@ const Placement = () => {
               </p>
               <div className="grid sm:grid-cols-2 gap-6">
                 {[
-                  { title: "Personalized Grooming", desc: "One-on-one sessions for personality development." },
+                  { title: "Placement Guidance", desc: "Expert guidance for placement to help you get hired." },
                   { title: "Industry Connections", desc: "Direct access to 500+ hiring partners." },
                   { title: "Life-long Support", desc: "Career guidance even after your first placement." },
                   { title: "Global Opportunities", desc: "Referrals to international tech hubs." }

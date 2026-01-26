@@ -90,8 +90,8 @@ export const courses = [
       }
     ],
     certification: {
-      title: "Certified Full Stack Developer (NASSCOM Aligned)",
-      details: "Upon successful completion of the course and capstone projects, you will receive a dual certification from Raj Software Institute and an industry-recognized certificate aligned with NASSCOM FutureSkills. This certification validates your proficiency in the MERN stack and makes you a preferred candidate for top-tier tech roles."
+      title: "Certified Full Stack Developer (Official AITECHHUB Certification)",
+      details: "Upon successful completion of the course and capstone projects, you will receive an official certification from AITECHHUB. This certification validates your proficiency in the MERN stack and makes you a preferred candidate for top-tier tech roles."
     },
     instructor: {
       name: "S. Raj",
@@ -211,8 +211,8 @@ export const courses = [
       }
     ],
     certification: {
-      title: "Data Science & AI Professional (NASSCOM FutureSkills)",
-      details: "Earn a professional certification aligned with NASSCOM FutureSkills standards. This certification recognizes your expertise in Machine Learning, Deep Learning, and Big Data Analytics, providing a significant advantage in the global AI job market."
+      title: "Data Science & AI Professional (Official AITECHHUB Certification)",
+      details: "Earn a professional certification from AITECHHUB that validates your expertise in Machine Learning, Deep Learning, and Big Data Analytics, providing a significant advantage in the global AI job market."
     },
     instructor: {
       name: "Dr. Anitha M.",

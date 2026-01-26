@@ -53,6 +53,7 @@ const Header = () => {
     { name: 'Courses', href: '/courses' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Placement', href: '/placement' },
+    { name: 'Join as Trainer', href: '/careers/join-as-trainer' },
     { name: 'Contact', href: '/contact' },
 
   ];
@@ -104,8 +105,8 @@ const Header = () => {
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 group">
-              <div className="bg-primary p-2 rounded-xl shadow-lg shadow-primary/30 group-hover:rotate-6 transition-transform duration-300">
-                <GraduationCap className="h-7 w-7 text-white" />
+              <div className="bg-white p-1 rounded-xl shadow-lg shadow-primary/10 group-hover:rotate-6 transition-transform duration-300">
+                <img src={BRANDING.logo} alt={BRANDING.fullName} className="h-10 w-10 object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-black text-slate-900 tracking-tighter leading-none flex items-center">

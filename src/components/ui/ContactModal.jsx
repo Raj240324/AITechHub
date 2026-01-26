@@ -2,10 +2,11 @@ import React from 'react';
 import { X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ContactForm from './ContactForm';
+import TrainerForm from './TrainerForm';
 import { useModal } from '../../context/ModalContext';
 
 const ContactModal = () => {
-  const { isModalOpen, closeModal, modalCourse } = useModal();
+  const { isModalOpen, closeModal, modalCourse, modalType } = useModal();
 
   // Handle body scroll lock and prevent layout shift
   React.useEffect(() => {
@@ -55,10 +56,12 @@ const ContactModal = () => {
             <div className="p-6 md:p-10 overflow-y-auto no-scrollbar">
               <div className="mb-6 md:mb-8">
                 <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest mb-3 md:mb-4">
-                  <span>Admissions Open 2026-27</span>
+                  <span>{modalType === 'trainer' ? 'Join Academic Faculty' : 'Admissions Open 2026-27'}</span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-2 md:mb-3 tracking-tight">
-                  {modalCourse === 'Download Brochure' ? (
+                  {modalType === 'trainer' ? (
+                    <>Expert <span className="text-primary">Mentor Program</span></>
+                  ) : modalCourse === 'Download Brochure' ? (
                     <>Get Your <span className="text-primary">Career Guide</span></>
                   ) : modalCourse === 'Corporate Training' ? (
                     <>Corporate <span className="text-primary">Inquiry</span></>
@@ -67,7 +70,9 @@ const ContactModal = () => {
                   )}
                 </h2>
                 <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
-                  {modalCourse === 'Download Brochure' 
+                  {modalType === 'trainer'
+                    ? "Apply to join our expert teaching faculty. Share your industry experience and shape the future of tech talent in Chennai."
+                    : modalCourse === 'Download Brochure' 
                     ? "Fill out the form below to receive our 2026 Career Guide and full syllabus in your inbox."
                     : modalCourse === 'Corporate Training'
                     ? "Let us know your organization's requirements, and our corporate training team will get back to you with a customized proposal."
@@ -77,7 +82,11 @@ const ContactModal = () => {
                 </p>
               </div>
 
-              <ContactForm initialCourse={modalCourse} />
+              {modalType === 'trainer' ? (
+                <TrainerForm />
+              ) : (
+                <ContactForm initialCourse={modalCourse} />
+              )}
             </div>
           </motion.div>
         </div>

@@ -15,8 +15,8 @@ const Footer = () => {
           {/* Institute Info */}
           <div className="space-y-8">
             <Link to="/" className="flex items-center space-x-2 text-white">
-              <div className="bg-primary p-1 rounded-lg">
-                <GraduationCap className="h-6 w-6 text-white" />
+              <div className="bg-white p-1 rounded-lg">
+                <img src={BRANDING.logo} alt={BRANDING.fullName} className="h-8 w-8 object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-black tracking-tight leading-none">
@@ -54,6 +54,7 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4 text-sm font-medium">
               <li><Link to="/about" className="hover:text-primary hover:translate-x-1 transition-all inline-flex items-center">About Us</Link></li>
+              <li><Link to="/careers/join-as-trainer" className="hover:text-primary hover:translate-x-1 transition-all inline-flex items-center">Join as Trainer</Link></li>
               <li><Link to="/gallery" className="hover:text-primary hover:translate-x-1 transition-all inline-flex items-center">Gallery</Link></li>
               <li><Link to="/reviews" className="hover:text-primary hover:translate-x-1 transition-all inline-flex items-center">Student Reviews</Link></li>
               <li><Link to="/placement" className="hover:text-primary hover:translate-x-1 transition-all inline-flex items-center">Placement Support</Link></li>
@@ -136,16 +137,20 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-10 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 text-xs font-medium">
           <p>© {currentYear} Raj Software Training Institute. All rights reserved.</p>
-          <div className="flex items-center space-x-8">
-            <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link to="/terms-conditions" className="hover:text-primary transition-colors">Terms & Conditions</Link>
+            <div className="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-2">
+              <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy</Link>
+              <Link to="/terms-conditions" className="hover:text-primary transition-colors">Terms</Link>
+              <Link to="/nda-policy" className="hover:text-primary transition-colors">NDA</Link>
+              <Link to="/refund-policy" className="hover:text-primary transition-colors">Refunds</Link>
+              <Link to="/legal/trainer-conduct" className="hover:text-primary transition-colors">Trainer Conduct</Link>
+              <Link to="/disclaimer" className="hover:text-primary transition-colors">Disclaimer</Link>
+            </div>
             <button 
               onClick={() => openModal()}
               className="text-primary hover:text-white font-bold uppercase tracking-widest transition-colors"
             >
               Enroll Today
             </button>
-          </div>
         </div>
       </div>
     </footer>

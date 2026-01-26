@@ -61,18 +61,23 @@ const ContactForm = ({ initialCourse = "General Inquiry" }) => {
     const location = formData.get('user_location');
     const message = formData.get('message');
 
+    // Strict Name Validation: Letters and spaces only
     if (!name || name.trim().length < 2) {
       errors.user_name = 'Name must be at least 2 characters long';
+    } else if (!/^[a-zA-Z\s]+$/.test(name)) {
+      errors.user_name = 'Name should only contain letters and spaces';
     }
 
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      errors.user_email = 'Please enter a valid email address';
+    // Strict Email Validation
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!email || !emailRegex.test(email)) {
+      errors.user_email = 'Please enter a valid official email address';
     }
 
-    // Remove non-digit characters for validation
+    // Strict Phone Validation: 10 digits exactly for India
     const digitsOnly = phone.replace(/\D/g, '');
-    if (!phone || digitsOnly.length < 10 || digitsOnly.length > 15) {
-      errors.user_phone = 'Please enter a valid phone number (10-15 digits)';
+    if (!phone || digitsOnly.length !== 10) {
+      errors.user_phone = 'Phone number must be exactly 10 digits';
     }
 
     if (!location || location.trim().length < 2) {
@@ -84,7 +89,7 @@ const ContactForm = ({ initialCourse = "General Inquiry" }) => {
     }
 
     if (!message || message.trim().length < 10) {
-      errors.message = 'Message must be at least 10 characters long';
+      errors.message = 'Message must be at least 10 characters (tell us more about your interest)';
     }
 
     setFormErrors(errors);
@@ -162,6 +167,9 @@ const ContactForm = ({ initialCourse = "General Inquiry" }) => {
             name="user_name"
             id="user_name"
             placeholder="John Doe"
+            onInput={(e) => {
+              e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+            }}
             className={`w-full px-4 py-2.5 bg-slate-50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm ${
               formErrors.user_name ? 'border-red-500' : 'border-slate-200'
             }`}
@@ -191,9 +199,9 @@ const ContactForm = ({ initialCourse = "General Inquiry" }) => {
             name="user_phone"
             id="user_phone"
             placeholder="+91 98765 43210"
-            maxLength={15}
+            maxLength={10}
             onInput={(e) => {
-              e.target.value = e.target.value.replace(/[^0-9+\s]/g, '');
+              e.target.value = e.target.value.replace(/\D/g, '');
             }}
             className={`w-full px-4 py-2.5 bg-slate-50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm ${
               formErrors.user_phone ? 'border-red-500' : 'border-slate-200'

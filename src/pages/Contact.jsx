@@ -31,15 +31,15 @@ const Contact = () => {
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,
       title: "Visit Us",
-      details: "1/92, Kannadasan 2nd St",
-      description: `${BRANDING.location} - 603209`
+      details: "No.42, 5th Floor, Global Tech Plaza",
+      description: "OMR Service Road, Sholinganallur, Chennai - 600119"
     }
   ];
 
   return (
     <Layout 
-      title="Contact Us | Reach Raj Software Institute"
-      description="Get in touch with us for course inquiries, batch details, and career counseling. Located in Maraimalai Nagar, Chengalpattu."
+      title="Contact Us | Reach AITECHHUB"
+      description="Get in touch with us for course inquiries, batch details, and career counseling. Located in Chennai."
     >
       <Hero 
         title={<>Get in <span className="text-primary">Touch</span></>}
@@ -97,7 +97,7 @@ const Contact = () => {
       {/* Real Satellite Map */}
       <section className="h-[500px] w-full bg-slate-200 relative overflow-hidden">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.3123456789!2d80.0210!3d12.6953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f90d56565657%3A0x5656565656565656!2sMaraimalai+Nagar%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin&maptype=satellite" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.8765432101!2d80.2250!3d12.9010!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d5d5d5d5d5d%3A0x5d5d5d5d5d5d5d5d!2sSholinganallur%2C+Chennai%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin&maptype=satellite" 
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 
@@ -105,7 +105,7 @@ const Contact = () => {
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
           className="absolute inset-0 w-full h-full"
-          title="Raj Institute Location"
+          title="AITECHHUB Location"
         ></iframe>
       </section>
     </Layout>

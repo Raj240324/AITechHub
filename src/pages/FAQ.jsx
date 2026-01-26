@@ -9,7 +9,7 @@ const faqData = [
     category: "General",
     questions: [
       {
-        q: "What makes Raj Software Training Institute different from others?",
+        q: "What makes AITECHHUB different from others?",
         a: "We focus on project-based learning and industrial training. Our curriculum is designed by industry experts, and we provide 100% placement assistance. We prioritize practical skills over theoretical knowledge."
       },
       {
@@ -51,7 +51,7 @@ const faqData = [
         a: "The average package for our freshers ranges from 4 LPA to 8 LPA, depending on the course, skill set, and the hiring company."
       },
       {
-        q: "Which companies hire from Raj Software Institute?",
+        q: "Which companies hire from AITECHHUB?",
         a: "Our students are placed in top MNCs and startups like Google, Amazon, TCS, Infosys, Wipro, and many others. Check our Placement page for a more comprehensive list."
       }
     ]

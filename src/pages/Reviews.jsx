@@ -12,7 +12,7 @@ const reviews = [
     role: "Full Stack Developer",
     course: "Full Stack Web Development",
     rating: 5,
-    content: "The Full Stack course at Raj Institute was a game-changer for me. I went from zero coding knowledge to building a complete e-commerce site. The mentors are always ready to help even after class hours.",
+    content: "The Full Stack course at AITECHHUB was a game-changer for me. I went from zero coding knowledge to building a complete e-commerce site. The mentors are always ready to help even after class hours.",
     image: "https://i.pravatar.cc/150?u=senthil",
     date: "2 weeks ago",
     verified: true
@@ -102,7 +102,7 @@ const Reviews = () => {
     <Layout>
       <Hero 
         title={<>Student <span className="text-primary-light">Success</span> Stories</>}
-        subtitle="Don't just take our word for it. Hear from our alumni who have transformed their careers with Raj Software Institute."
+        subtitle="Don't just take our word for it. Hear from our alumni who have transformed their careers with AITECHHUB."
       />
 
       {/* Stats Section */}

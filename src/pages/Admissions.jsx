@@ -46,7 +46,7 @@ const Admissions = () => {
   return (
     <Layout 
       title="Admissions | Start Your Tech Career"
-      description="Easy 4-step admission process at Raj Software Training Institute. Check eligibility, batch timings, and enroll for upcoming batches."
+      description="Easy 4-step admission process at AITECHHUB Training Institute. Check eligibility, batch timings, and enroll for upcoming batches."
     >
       <Hero 
         title={<>Your Journey to <span className="text-primary">Tech Excellence</span> Starts Here.</>}

@@ -123,8 +123,8 @@ const Gallery = () => {
 
   return (
     <Layout
-      title="Gallery | Raj Software Training Institute"
-      description="Explore photos from our campus, classrooms, placement drives, and events. See the Raj Institute experience in pictures."
+      title="Gallery | AITECHHUB Training Institute"
+      description="Explore photos from our campus, classrooms, placement drives, and events. See the AITECHHUB experience in pictures."
     >
       <Hero
         badge={
@@ -134,7 +134,7 @@ const Gallery = () => {
           </div>
         }
         title={<>Explore <span className="text-primary">Our World</span></>}
-        subtitle="Take a visual tour of our campus, classrooms, and the vibrant community at Raj Software Training Institute."
+        subtitle="Take a visual tour of our campus, classrooms, and the vibrant community at AITECHHUB."
       />
 
       {/* Category Filter */}

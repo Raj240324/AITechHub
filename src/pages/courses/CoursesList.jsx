@@ -33,7 +33,7 @@ const CoursesList = () => {
 
   return (
     <Layout 
-      title="All Courses | Raj Software Training Institute"
+      title="All Courses | AITECHHUB Training Institute"
       description="Browse our comprehensive list of software training courses. From Web Development to Data Science, find the right program for your career."
     >
       <Hero 

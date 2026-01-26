@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, Globe, ArrowRight, Star, Users, Zap } from 'lucide-react';
+import { Clock, Globe, ArrowRight, Star, Users, Zap, Download } from 'lucide-react';
 import { useModal } from '../../context/ModalContext';
 import { motion } from 'framer-motion';
 import { ScaleOnHover } from '../utils/Animations';
@@ -101,15 +101,27 @@ const CourseCard = ({ course, index = 0 }) => {
             </ScaleOnHover>
           </div>
 
-          <ScaleOnHover scale={1.02}>
-            <Link
-              to={`/courses/${course.slug}`}
-              className="flex items-center justify-center w-full py-4 px-6 bg-slate-900 text-white text-xs font-black uppercase tracking-widest rounded-xl hover:bg-slate-800 transition-all duration-300 group/btn shadow-lg shadow-slate-900/10"
-            >
-              Course Details
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-            </Link>
-          </ScaleOnHover>
+          <div className="grid grid-cols-2 gap-3 mt-auto">
+            <ScaleOnHover scale={1.02}>
+              <button
+                onClick={() => openModal(`Syllabus: ${course.title}`)}
+                className="flex items-center justify-center w-full py-3 px-4 bg-primary/5 text-primary text-[10px] font-black uppercase tracking-widest rounded-xl hover:bg-primary hover:text-white transition-all duration-300 group/btn"
+              >
+                <Download className="mr-2 h-3.5 w-3.5" />
+                Syllabus
+              </button>
+            </ScaleOnHover>
+
+            <ScaleOnHover scale={1.02}>
+              <Link
+                to={`/courses/${course.slug}`}
+                className="flex items-center justify-center w-full py-3 px-4 bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest rounded-xl hover:bg-slate-800 transition-all duration-300 group/btn shadow-lg shadow-slate-900/10"
+              >
+                Details
+                <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
+              </Link>
+            </ScaleOnHover>
+          </div>
         </div>
       </div>
     </motion.div>

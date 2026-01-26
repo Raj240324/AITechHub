@@ -5,19 +5,22 @@ const ModalContext = createContext();
 export const ModalProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalCourse, setModalCourse] = useState('');
+  const [modalType, setModalType] = useState('student'); // 'student' or 'trainer'
 
-  const openModal = (courseName = 'General Inquiry') => {
+  const openModal = (courseName = 'General Inquiry', type = 'student') => {
     setModalCourse(courseName);
+    setModalType(type);
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setModalCourse('');
+    setModalType('student');
   };
 
   return (
-    <ModalContext.Provider value={{ isModalOpen, modalCourse, openModal, closeModal }}>
+    <ModalContext.Provider value={{ isModalOpen, modalCourse, modalType, openModal, closeModal }}>
       {children}
     </ModalContext.Provider>
   );

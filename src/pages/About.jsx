@@ -17,15 +17,15 @@ const About = () => {
 
   const locations = [
     { 
-      name: "Maraimalai Nagar (Head Office)", 
-      address: "1/92, Kannadasan 2nd St, NH3, Maraimalai Nagar - 603209",
+      name: "Chennai (Head Office)", 
+      address: "No.42, 5th Floor, Global Tech Plaza, OMR Service Road, Sholinganallur, Chennai - 600119",
       map: "https://goo.gl/maps/placeholder1",
       phone: "+91 63839 80415",
       type: "Main Campus"
     },
     { 
-      name: "Chengalpattu Branch", 
-      address: "G.S.T Road, Near New Bus Stand, Chengalpattu - 603001",
+      name: "Chennai Branch", 
+      address: "G.S.T Road, Near New Bus Stand, Chengalpattu - 603001, Chennai",
       map: "https://goo.gl/maps/placeholder2",
       phone: "+91 63839 80415",
       type: "Satellite Center"
@@ -40,13 +40,13 @@ const About = () => {
   const values = [
     {
       icon: <Award className="h-6 w-6 text-primary" />,
-      title: "Industry Recognized",
-      description: "Our courses are aligned with NASSCOM FutureSkills, ensuring you learn what the industry actually needs."
+      title: "Official AITECHHUB Certification",
+      description: "Receive a professional certificate from AITECHHUB that validates your project-based expertise and technical proficiency."
     },
     {
       icon: <ShieldCheck className="h-6 w-6 text-primary" />,
-      title: "100% Placement Support",
-      description: "Dedicated placement cell with a track record of placing students in top Fortune 500 companies."
+      title: "Guidance for Placement",
+      description: "We guide you for placement to get your dream job through intensive technical and HR grooming sessions."
     },
     {
       icon: <Target className="h-6 w-6 text-primary" />,
@@ -62,33 +62,36 @@ const About = () => {
 
   const team = [
     {
-      name: "Rajesh Kumar",
-      role: "Founder & Lead Instructor",
-      bio: "15+ years of experience in Full Stack Development. Ex-Senior Architect at leading tech firms.",
-      image: "https://i.pravatar.cc/150?u=rajesh"
+      name: "S. Raj",
+      role: "Founder & Lead Architect",
+      bio: "15+ years of experience in Full Stack Development and Cloud Architecture. Former Senior Architect at Silicon Valley firms, dedicated to bringing high-end tech education to Chennai.",
+      expertise: ["Architecture", "MERN Stack", "AWS"],
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400"
     },
     {
-      name: "Anjali Devi",
-      role: "Co-Founder & Design Head",
-      bio: "Award-winning UI/UX designer with a passion for teaching human-centric design principles.",
-      image: "https://i.pravatar.cc/150?u=anjali"
+      name: "Dr. Anitha M.",
+      role: "Head of Data Science",
+      bio: "Ph.D. in Machine Learning with 10+ years of industrial experience in Big Data Analytics. Expert in simplifying complex algorithmic concepts for students.",
+      expertise: ["Data Science", "AI/ML", "Python"],
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400"
     },
     {
       name: "Vikram Singh",
-      role: "Head of Placements",
-      bio: "Career coach with 10+ years of experience in tech recruitment and corporate relations.",
-      image: "https://i.pravatar.cc/150?u=vikram"
+      role: "Head of Placements & HR Training",
+      bio: "Veteran career coach with 10+ years of experience in tech recruitment. Specialized in interview grooming and strategic placement guidance for top MNCs.",
+      expertise: ["HR Grooming", "Placement Strategy", "Soft Skills"],
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400"
     }
   ];
 
   return (
     <Layout 
-      title="About Us | Raj Software Training Institute"
+      title="About Us | AITECHHUB Training Institute"
       description="Learn about our mission to bridge the skill gap in the software industry. Meet our expert mentors and understand our teaching philosophy."
     >
       <Hero 
-        title={<>Our Story: From a Small Classroom to <span className="text-primary">Chengalpattu's Top Institute</span>.</>}
-        subtitle="We started in 2025 with just 10 students in Maraimalai Nagar. Our goal was simple: provide the same quality of training you get in Chennai's biggest institutes, but right here in our neighborhood."
+        title={<>Our Story: From a Small Classroom to <span className="text-primary">Chennai's Top Institute</span>.</>}
+        subtitle="We started in 2025 with just 10 students in Chennai. Our goal was simple: provide the best software training quality for the tech industry."
       />
 
       {/* Stats Section */}
@@ -167,7 +170,7 @@ const About = () => {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="heading-md mb-4">Meet Our Mentors</h2>
             <p className="text-slate-600">
-              Our team consists of industry veterans who are passionate about sharing their knowledge and helping you succeed.
+              Our team consists of industry veterans who are passionate about sharing their knowledge and helping you succeed. All our mentors and staff are bound by strict Non-Disclosure Agreements (NDAs) to protect your project data and institutional IP.
             </p>
           </div>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -180,6 +183,13 @@ const About = () => {
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h3>
                   <p className="text-primary font-semibold text-sm mb-4">{member.role}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {member.expertise.map((skill, i) => (
+                      <span key={i} className="px-2 py-0.5 bg-slate-100 text-slate-500 text-[9px] font-black uppercase tracking-wider rounded-md border border-slate-200/50">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                   <p className="text-slate-600 text-sm leading-relaxed">{member.bio}</p>
                 </div>
               </StaggerItem>

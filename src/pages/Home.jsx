@@ -24,7 +24,8 @@ import {
   MessageSquare,
   Globe,
   Download,
-  Rocket
+  Rocket,
+  MapPin
 } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import CourseCard from '../components/ui/CourseCard';
@@ -71,7 +72,7 @@ const learningPartners = [
 
   const stats = [
     { label: "Students Empowered", value: "100,000+", icon: <Users className="h-5 w-5" /> },
-    { label: "Placement Success", value: "100%", icon: <Briefcase className="h-5 w-5" /> },
+    { label: "Career Prep Success", value: "Expert", icon: <Briefcase className="h-5 w-5" /> },
     { label: "Years of Trust", value: "15+", icon: <Star className="h-5 w-5" /> },
     { label: "Hiring Partners", value: "500+", icon: <Building2 className="h-5 w-5" /> },
   ];
@@ -108,30 +109,30 @@ const learningPartners = [
   const methodology = [
     {
       step: "01",
-      title: "Learn by Doing",
-      desc: "Forget boring lectures. We start coding from day one. You'll learn concepts by building small tools and apps.",
-      icon: <BookOpen className="h-6 w-6" />,
+      title: "Dedicated Lab Support",
+      desc: "Our high-tech labs are open 12 hours a day. Get hands-on practice with mentors always available to clear your doubts.",
+      icon: <Cpu className="h-6 w-6" />,
       color: "bg-blue-500"
     },
     {
       step: "02",
-      title: "Hands-on Labs",
-      desc: "Apply what you learn immediately in our intensive, mentor-led practical coding sessions.",
+      title: "Real-time Training",
+      desc: "Learn through industrial projects and case studies. We bridge the gap between academic theory and corporate reality.",
       icon: <Code2 className="h-6 w-6" />,
       color: "bg-purple-500"
     },
     {
       step: "03",
-      title: "Real-world Projects",
-      desc: "Build production-ready applications that showcase your skills to potential employers.",
-      icon: <Rocket className="h-6 w-6" />,
+      title: "1:1 Expert Mentorship",
+      desc: "Get personalized guidance from industry veterans who have worked in top MNCs like Zoho, TCS, and Amazon.",
+      icon: <Users className="h-6 w-6" />,
       color: "bg-orange-500"
     },
     {
       step: "04",
-      title: "Career Placement",
-      desc: "Get job-ready with resume building, mock interviews, and direct referrals to hiring partners.",
-      icon: <Briefcase className="h-6 w-6" />,
+      title: "Placement Guidance to Get Hired",
+      desc: "We guide you for placement through intense interview grooming, resume building, and mock sessions until you are fully ready to get your dream job.",
+      icon: <GraduationCap className="h-6 w-6" />,
       color: "bg-green-500"
     }
   ];
@@ -146,7 +147,7 @@ const learningPartners = [
     {
       name: "Priya Dharshini",
       role: "UI/UX Designer @ Freshworks",
-      content: "Best place to learn in Chengalpattu area. They helped me build a proper portfolio, which is exactly what companies asked for. Thank you Raj sir!",
+      content: "Best place to learn in Chengalpattu area. They helped me build a proper portfolio, which is exactly what companies asked for. Thank you AITECHHUB sir!",
       image: "https://i.pravatar.cc/150?u=priya"
     },
     {
@@ -159,16 +160,28 @@ const learningPartners = [
 
   const faqs = [
     {
-      q: "What makes Raj Software Institute different?",
-      a: "We focus on project-based learning and industrial training. Our curriculum is designed by industry experts, and we provide 100% placement assistance."
+      q: "Do you provide placement support?",
+      a: "We provide an intensive career-ready ecosystem. This includes technical grooming, resume building, and mock interviews, while connecting you with our 500+ hiring partners to help you secure the right role."
     },
     {
-      q: "Do I need prior coding experience?",
-      a: "Not at all! We have beginner-friendly courses that start from the very basics and take you to an advanced level."
+      q: "Are your trainers industry experts?",
+      a: "Absolutely! All our mentors are industry veterans with 10+ years of experience in top tech companies like Zoho, Freshworks, and MNCs."
     },
     {
-      q: "Do you provide job assistance?",
-      a: "Yes, we provide dedicated placement assistance, including resume building, mock interviews, and referrals to our 50+ hiring partners."
+      q: "Is the curriculum updated for 2026 standards?",
+      a: "Yes, our syllabus is regularly updated and aligned with current industrial requirements to ensure you learn the most in-demand technologies."
+    },
+    {
+      q: "Do you offer bilingual support for local students?",
+      a: "Yes, we explain complex technical concepts in both Tamil and English to ensure every student understands the fundamentals clearly."
+    },
+    {
+      q: "Is the certification officially recognized?",
+      a: "Yes, you will receive an official certification from AITECHHUB upon successful completion of your projects. This certificate is recognized by our extensive network of hiring partners as a mark of technical proficiency."
+    },
+    {
+      q: "Is my project data and idea protected?",
+      a: "Absolutely. We maintain a strict NDA (Non-Disclosure Agreement) policy. All our trainers and staff are legally bound to protect student project data and intellectual property."
     }
   ];
 
@@ -179,15 +192,15 @@ const learningPartners = [
         badge={
           <>
             <ShieldCheck className="h-3 w-3" />
-            <span>No.1 Software Training & Placement Institute for 15+ Years</span>
+            <span>No.1 Software Training & Placement Institute in Chennai</span>
           </>
         }
         title={
           <>
-            Launch Your IT Career in <span className="text-primary">Chennai</span> & Beyond.
+            Best Software Training Institute in <span className="text-primary">Chennai</span> with Expert Career Guidance.
           </>
         }
-        subtitle="Practical, hands-on software training in Maraimalai Nagar. We don't just teach theory – we help you build real projects and get hired by top companies."
+        subtitle="Practical, hands-on software training in Chennai. We guide you through every step of your placement journey to help you secure your first job in the tech industry."
         rightContent={
           <FadeIn 
             direction="left"
@@ -241,6 +254,16 @@ const learningPartners = [
           <Link to="/courses" className="btn-primary text-lg px-8 py-4 flex items-center justify-center">
             Explore Courses <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
+          <button 
+            onClick={() => {
+              const el = document.getElementById('trending-courses');
+              el?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="btn-secondary text-lg px-8 py-4 flex items-center justify-center border-2 border-primary/20 hover:border-primary transition-all group"
+          >
+            <Download className="mr-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
+            Download Syllabus
+          </button>
           <button 
             onClick={() => openModal()}
             className="btn-secondary text-lg px-8 py-4 flex items-center justify-center border-2"
@@ -301,7 +324,11 @@ const learningPartners = [
               <div key={index} className="flex flex-col items-center group">
                 <div className="h-16 w-32 md:h-20 md:w-40 flex items-center justify-center transition-all">
                   {partner.logo ? (
-                    <img src={partner.logo} alt={partner.name} className="max-h-12 md:max-h-16 object-contain" />
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name} 
+                      className={`max-h-12 md:max-h-16 object-contain ${partner.name === 'MSME' ? 'grayscale-0' : 'grayscale group-hover:grayscale-0'} transition-all duration-500`} 
+                    />
                   ) : (
                     <span className="text-xl font-black text-slate-300 group-hover:text-primary transition-colors">{partner.name}</span>
                   )}
@@ -324,17 +351,17 @@ const learningPartners = [
                   Industry Recognized
                 </div>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight">
-                  Get Certified by <span className="text-primary">NASSCOM FutureSkills</span>
+                  Get Your <span className="text-primary">Official AITECHHUB Certificate</span>
                 </h2>
                 <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed">
-                  Our partnership with NASSCOM ensures that you receive training that meets global industry standards. Upon completion, you'll receive dual certification that is recognized by top tech companies worldwide.
+                  Our certification is more than just a piece of paper. It is a validation of your practical skills and project-ready expertise, recognized by our 500+ hiring partners across the industry.
                 </p>
                 <div className="space-y-4 mb-8">
                   {[
-                    "Globally Recognized Certification",
-                    "Industry-Aligned Learning Paths",
-                    "Verified Skills & Competencies",
-                    "Enhanced Career Opportunities"
+                    "Institute-Issued Official Certificate",
+                    "Project-Validated Proficiency",
+                    "Verified Technical Competencies",
+                    "Hiring Partner Recognition"
                   ].map((item, i) => (
                     <div key={i} className="flex items-center space-x-3">
                       <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center">
@@ -357,8 +384,8 @@ const learningPartners = [
                     <div className="w-24 h-24 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-6">
                       <Award className="h-12 w-12 text-primary" />
                     </div>
-                    <div className="text-2xl font-black text-slate-900 mb-2">Official Partner</div>
-                    <div className="text-primary font-bold tracking-widest uppercase text-sm">NASSCOM FutureSkills</div>
+                    <div className="text-2xl font-black text-slate-900 mb-2">Authenticated by</div>
+                    <div className="text-primary font-bold tracking-widest uppercase text-sm">AITECHHUB</div>
                     <div className="mt-8 pt-8 border-t border-slate-100">
                       <p className="text-slate-500 text-sm font-medium">Verified Training Provider</p>
                     </div>
@@ -447,7 +474,22 @@ const learningPartners = [
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                 Before us, students from Maraimalai Nagar and Chengalpattu had to travel all the way to OMR or Chennai city for quality training. We changed that. We brought top-tier tech education right to your neighborhood, with the same quality you'd expect from big city institutes.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              
+              <div className="mb-10">
+                <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6 flex items-center">
+                  <MapPin className="h-4 w-4 mr-2 text-primary" />
+                  Areas We Serve in Chennai & NT Chengalpattu
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {["Maraimalai Nagar", "Chengalpattu", "Guduvanchery", "Potheri", "Singaperumal Koil", "Urappakkam", "Vandalur", "Tambaram", "OMR", "Porur", "Anna Nagar"].map((area) => (
+                    <span key={area} className="px-4 py-2 bg-slate-50 border border-slate-100 rounded-xl text-sm font-bold text-slate-600 hover:bg-primary hover:text-white hover:border-primary transition-all cursor-default">
+                      {area}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {[
                   "Located in Maraimalai Nagar, Chengalpattu",
                   "Expert Mentors from Top Tech Companies",
@@ -479,13 +521,13 @@ const learningPartners = [
         <div className="container-custom relative z-10">
           <div className="max-w-3xl mb-16">
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-6">
-              Our Methodology
+              The AITECHHUB Advantage
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
-              How We Transform You into a <span className="text-primary">Tech Professional.</span>
+              Why We’re the <span className="text-primary">Best Choice</span> for Your IT Career.
             </h2>
             <p className="text-lg text-slate-400 leading-relaxed">
-              Our 4-step learning ecosystem is designed to take you from the fundamentals to advanced industry-ready projects, ensuring you have the confidence to excel in any interview.
+              Our unique learning ecosystem is designed to provide you with the edge you need. From dedicated lab support to real-time industrial training, we ensure you're ready for the global tech stage.
             </p>
           </div>
 
@@ -538,11 +580,11 @@ const learningPartners = [
 
       {/* Flagship Courses */}
 
-      <section className="section-padding bg-slate-50">
+      <section id="trending-courses" className="section-padding bg-slate-50">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div className="max-w-2xl">
-              <h2 className="heading-md mb-4">Most Popular Programs</h2>
+              <h2 className="heading-md mb-4">Top Trending Courses</h2>
               <p className="text-slate-600 text-base md:text-lg">
                 Choose from our high-demand courses designed to make you industry-ready.
               </p>
@@ -568,11 +610,96 @@ const learningPartners = [
         </div>
       </section>
 
+      {/* Trainer Spotlight Section */}
+      <section className="section-padding bg-slate-50 relative overflow-hidden">
+        <div className="container-custom relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between mb-16 gap-8 text-center lg:text-left">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+                Learn from the Best
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
+                Our Mentors Come from <span className="text-primary">Global Tech Leaders</span>
+              </h2>
+              <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+                At AITECHHUB, you aren't taught by academics. You are mentored by engineers who have built the tools you use every day.
+              </p>
+            </div>
+            <div 
+              onClick={() => openModal('Trainer Application', 'trainer')}
+              className="group flex flex-col items-center lg:items-end text-center lg:text-right cursor-pointer"
+            >
+              <div className="flex -space-x-4 mb-4">
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="w-12 h-12 rounded-full border-4 border-white overflow-hidden shadow-lg">
+                    <img src={`https://i.pravatar.cc/150?u=trainer${i}`} alt="Trainer" />
+                  </div>
+                ))}
+                <div className="w-12 h-12 rounded-full border-4 border-white bg-slate-900 flex items-center justify-center shadow-lg">
+                  <span className="text-xs font-bold text-white">+10</span>
+                </div>
+              </div>
+              <div className="flex items-center text-primary font-black uppercase tracking-widest text-sm hover:underline">
+                Join our teaching faculty <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {[
+              {
+                name: "S. Raj",
+                role: "Senior Architect & MERN Expert",
+                company: "Ex-Silicon Valley Architect",
+                image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
+                expertise: ["System Design", "Cloud Architecture"]
+              },
+              {
+                name: "Dr. Anitha M.",
+                role: "Lead Data Scientist",
+                company: "Ph.D. in Machine Learning",
+                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
+                expertise: ["Predictive Analytics", "Deep Learning"]
+              },
+              {
+                name: "Vikram Singh",
+                role: "Head of Tech Recruitment",
+                company: "10+ Years in Tech HR",
+                image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
+                expertise: ["Interview Grooming", "Career Strategy"]
+              }
+            ].map((mentor, index) => (
+              <ScaleOnHover key={index}>
+                <div className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all h-full flex flex-col">
+                  <div className="flex items-center space-x-4 mb-6">
+                    <img src={mentor.image} alt={mentor.name} className="h-16 w-16 rounded-2xl object-cover shadow-md" />
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-900 leading-tight">{mentor.name}</h3>
+                      <p className="text-primary font-bold text-xs uppercase tracking-wider mt-1">{mentor.role}</p>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-bold text-slate-500 mb-4">{mentor.company}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {mentor.expertise.map((skill, i) => (
+                        <span key={i} className="px-2 py-1 bg-slate-50 text-slate-400 text-[10px] font-black uppercase tracking-wider rounded-lg border border-slate-100">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </ScaleOnHover>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Features/Trust Factors */}
       <section className="section-padding bg-white relative overflow-hidden">
         <div className="container-custom relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="heading-md mb-4">Why Choose Raj Institute?</h2>
+            <h2 className="heading-md mb-4">Why Choose AITECHHUB?</h2>
             <p className="text-slate-600 text-base md:text-lg">
               We don't just teach code; we build careers through a comprehensive learning ecosystem.
             </p>

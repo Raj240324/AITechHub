@@ -23,6 +23,11 @@ const CoursesList = lazy(() => import('./pages/courses/CoursesList'));
 const CourseDetail = lazy(() => import('./pages/courses/CourseDetail'));
 const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy'));
 const TermsConditions = lazy(() => import('./pages/legal/TermsConditions'));
+const NDAPolicy = lazy(() => import('./pages/legal/NDAPolicy'));
+const RefundPolicy = lazy(() => import('./pages/legal/RefundPolicy'));
+const Disclaimer = lazy(() => import('./pages/legal/Disclaimer'));
+const TrainerCodeOfConduct = lazy(() => import('./pages/legal/TrainerCodeOfConduct'));
+const JoinAsTrainer = lazy(() => import('./pages/careers/JoinAsTrainer'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // New Pages
@@ -60,6 +65,11 @@ function App() {
                 <Route path="/courses/:slug" element={<CourseDetail />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-conditions" element={<TermsConditions />} />
+                <Route path="/nda-policy" element={<NDAPolicy />} />
+                <Route path="/refund-policy" element={<RefundPolicy />} />
+                <Route path="/disclaimer" element={<Disclaimer />} />
+                <Route path="/legal/trainer-conduct" element={<TrainerCodeOfConduct />} />
+                <Route path="/careers/join-as-trainer" element={<JoinAsTrainer />} />
                 {/* New Pages */}
                 <Route path="/gallery" element={<Gallery />} />
 
