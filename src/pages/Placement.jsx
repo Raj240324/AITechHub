@@ -3,7 +3,7 @@ import Layout from '../components/layout/Layout';
 import Hero from '../components/ui/Hero';
 import { CheckCircle2, Briefcase, TrendingUp, Users, Building2, Quote, ArrowRight, Award } from 'lucide-react';
 import { useModal } from '../context/ModalContext';
-import { FadeIn, StaggerContainer, StaggerItem, ScaleOnHover, ScrollCountUp, Marquee } from '../components/utils/Animations';
+import { FadeIn, StaggerContainer, StaggerItem, ScaleOnHover, ScrollCountUp, Marquee, Parallax } from '../components/utils/Animations';
 import { BRANDING } from '../data/branding';
 
 const placementStats = [
@@ -99,7 +99,9 @@ const Placement = () => {
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="bg-slate-900 rounded-[3rem] p-10 md:p-16 text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/10 -skew-x-12 translate-x-1/2" />
+            <Parallax offset={20} className="absolute top-0 right-0 w-1/3 h-full z-0">
+               <div className="w-full h-full bg-primary/10 -skew-x-12 translate-x-1/2" />
+            </Parallax>
             <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
               <div>
                 <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-6">
@@ -120,24 +122,24 @@ const Placement = () => {
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center group hover:bg-primary transition-all duration-500">
+              <StaggerContainer className="grid grid-cols-2 gap-4">
+                <StaggerItem className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center group hover:bg-primary transition-all duration-500">
                   <Building2 className="h-10 w-10 text-primary mb-4 group-hover:text-white" />
                   <p className="font-bold text-sm">SIPCOT Siruseri Partnerships</p>
-                </div>
-                <div className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center group hover:bg-primary transition-all duration-500">
+                </StaggerItem>
+                <StaggerItem className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center group hover:bg-primary transition-all duration-500">
                   <Users className="h-10 w-10 text-primary mb-4 group-hover:text-white" />
                   <p className="font-bold text-sm">Tamil-English Interview Prep</p>
-                </div>
-                <div className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center group hover:bg-primary transition-all duration-500">
+                </StaggerItem>
+                <StaggerItem className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center group hover:bg-primary transition-all duration-500">
                   <Award className="h-10 w-10 text-primary mb-4 group-hover:text-white" />
                   <p className="font-bold text-sm">Regional Hiring Events</p>
-                </div>
-                <div className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center group hover:bg-primary transition-all duration-500">
+                </StaggerItem>
+                <StaggerItem className="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center p-6 text-center group hover:bg-primary transition-all duration-500">
                   <Briefcase className="h-10 w-10 text-primary mb-4 group-hover:text-white" />
                   <p className="font-bold text-sm">Direct Referrals to Zoho/TCS</p>
-                </div>
-              </div>
+                </StaggerItem>
+              </StaggerContainer>
             </div>
           </div>
         </div>
@@ -168,7 +170,9 @@ const Placement = () => {
       <section className="py-20 bg-primary/5 border-y border-primary/10">
         <div className="container-custom">
           <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-xl border border-primary/20 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+            <Parallax offset={-30} className="absolute top-0 right-0 w-64 h-64 z-0">
+               <div className="w-full h-full bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+            </Parallax>
             <div className="relative z-10 text-center max-w-4xl mx-auto">
               <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary text-white text-sm font-bold uppercase tracking-widest mb-8 shadow-lg shadow-primary/30">
                 <Award className="h-4 w-4" />

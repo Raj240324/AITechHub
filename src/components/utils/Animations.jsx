@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion, useInView, animate } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useInView, animate, useScroll, useTransform, useSpring } from 'framer-motion';
 
 export const FadeIn = ({ 
   children, 
@@ -7,13 +7,14 @@ export const FadeIn = ({
   delay = 0, 
   duration = 0.5, 
   className = "",
-  fullWidth = false 
+  fullWidth = false,
+  viewportMargin = "-50px" // Expose margin as prop for flexibility
 }) => {
   const directions = {
-    up: { y: 40 },
-    down: { y: -40 },
-    left: { x: 40 },
-    right: { x: -40 },
+    up: { y: 60 },
+    down: { y: -60 },
+    left: { x: 60 },
+    right: { x: -60 },
     none: { x: 0, y: 0 }
   };
 
@@ -21,18 +22,22 @@ export const FadeIn = ({
     <motion.div
       initial={{ 
         opacity: 0, 
+        scale: 0.95,
         ...directions[direction] 
       }}
       whileInView={{ 
         opacity: 1, 
+        scale: 1,
         x: 0, 
         y: 0 
       }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: viewportMargin }}
       transition={{ 
-        duration: duration, 
+        type: "spring",
+        stiffness: 70,
+        damping: 20,
         delay: delay,
-        ease: "easeOut" 
+        duration: duration
       }}
       className={className}
       style={{ width: fullWidth ? '100%' : 'auto' }}
@@ -45,8 +50,8 @@ export const FadeIn = ({
 export const StaggerContainer = ({ 
   children, 
   className = "",
-  delayChildren = 0,
-  staggerChildren = 0.1
+  delayChildren = 0.1,
+  staggerChildren = 0.15
 }) => {
   return (
     <motion.div
@@ -73,8 +78,13 @@ export const StaggerItem = ({ children, className = "" }) => {
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 20 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+        hidden: { opacity: 0, y: 30, scale: 0.95 },
+        show: { 
+          opacity: 1, 
+          y: 0, 
+          scale: 1,
+          transition: { type: "spring", stiffness: 80, damping: 20 } 
+        }
       }}
       className={className}
     >
@@ -88,7 +98,7 @@ export const ScaleOnHover = ({ children, className = "", scale = 1.05 }) => {
     <motion.div
       whileHover={{ scale }}
       whileTap={{ scale: 0.95 }}
-      transition={{ type: "spring", stiffness: 300 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
       className={className}
     >
       {children}
@@ -96,8 +106,30 @@ export const ScaleOnHover = ({ children, className = "", scale = 1.05 }) => {
   );
 };
 
+export const Parallax = ({ children, offset = 50, className = "" }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const springConfig = { stiffness: 300, damping: 30, mass: 1 };
+  const y = useSpring(
+    useTransform(scrollYProgress, [0, 1], [offset, -offset]),
+    springConfig
+  );
+
+  return (
+    <div ref={ref} className={className} style={{ overflow: 'visible' }}>
+      <motion.div style={{ y }}>
+        {children}
+      </motion.div>
+    </div>
+  );
+};
+
 export const CountUp = ({ end, duration = 2, suffix = "", prefix = "" }) => {
-  const nodeRef = React.useRef();
+  const nodeRef = useRef();
   const from = 0;
   const to = parseFloat(end.replace(/,/g, '').replace(suffix, '').replace(prefix, '')) || 0;
 
@@ -121,7 +153,7 @@ export const CountUp = ({ end, duration = 2, suffix = "", prefix = "" }) => {
 };
 
 export const ScrollCountUp = ({ end, duration = 2.5, suffix = "", prefix = "", className="" }) => {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   
   let targetValue = 0;

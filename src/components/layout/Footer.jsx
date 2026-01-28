@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { GraduationCap, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight } from 'lucide-react';
 import { useModal } from '../../context/ModalContext';
 import { BRANDING } from '../../data/branding';
+import { MicroExpander } from '../ui/MicroExpander';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -30,19 +31,35 @@ const Footer = () => {
             <p className="text-sm leading-relaxed">
               {BRANDING.description}
             </p>
-            <div className="flex space-x-4">
-              <a href={BRANDING.socials.facebook} className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href={BRANDING.socials.twitter} className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href={BRANDING.socials.linkedin} className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href={BRANDING.socials.instagram} className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300">
-                <Instagram className="h-5 w-5" />
-              </a>
+            <div className="flex flex-col gap-3">
+              <div className="flex gap-3">
+                <MicroExpander 
+                  text="Facebook" 
+                  icon={<Facebook className="h-5 w-5" />} 
+                  className="bg-white/5 border-none text-white hover:bg-[#1877F2] hover:text-white"
+                  onClick={() => window.open(BRANDING.socials.facebook, '_blank')}
+                />
+                <MicroExpander 
+                  text="Twitter" 
+                  icon={<Twitter className="h-5 w-5" />} 
+                  className="bg-white/5 border-none text-white hover:bg-[#1DA1F2] hover:text-white"
+                  onClick={() => window.open(BRANDING.socials.twitter, '_blank')}
+                />
+              </div>
+              <div className="flex gap-3">
+                <MicroExpander 
+                  text="LinkedIn" 
+                  icon={<Linkedin className="h-5 w-5" />} 
+                  className="bg-white/5 border-none text-white hover:bg-[#0A66C2] hover:text-white"
+                  onClick={() => window.open(BRANDING.socials.linkedin, '_blank')}
+                />
+                <MicroExpander 
+                  text="Instagram" 
+                  icon={<Instagram className="h-5 w-5" />} 
+                  className="bg-white/5 border-none text-white hover:bg-[#E4405F] hover:text-white"
+                  onClick={() => window.open(BRANDING.socials.instagram, '_blank')}
+                />
+              </div>
             </div>
           </div>
 

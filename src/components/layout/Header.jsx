@@ -60,48 +60,136 @@ const Header = () => {
 
   return (
     <header className={clsx(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white/95 backdrop-blur-md shadow-sm lg:shadow-none lg:backdrop-blur-none",
-      scrolled ? "lg:bg-white lg:shadow-lg lg:shadow-slate-200/50" : "lg:bg-transparent"
+      "fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500",
+      "w-[95%] max-w-7xl rounded-full border border-white/20",
+      scrolled 
+        ? "bg-white/80 backdrop-blur-xl shadow-lg shadow-slate-200/20 py-1" 
+        : "bg-white/60 backdrop-blur-lg shadow-md py-2"
     )}>
-      {/* Top Bar */}
-      <div className={clsx(
-        "bg-slate-900 text-white transition-all duration-500 overflow-hidden border-b border-white/5",
-        scrolled ? "max-h-0 opacity-0 invisible" : "max-h-20 opacity-100 visible py-2.5"
-      )}>
-        <div className="container-custom flex flex-col md:flex-row justify-between items-center text-[11px] font-semibold tracking-wide uppercase">
-          <div className="flex items-center space-x-8">
-            <a href={`mailto:${BRANDING.email}`} className="flex items-center hover:text-primary-light transition-colors group">
-              <Mail className="h-3.5 w-3.5 mr-2 text-primary-light group-hover:scale-110 transition-transform" />
-              {BRANDING.email}
-            </a>
-            <a href={`tel:${BRANDING.phone.replace(/\s/g, '')}`} className="flex items-center hover:text-primary-light transition-colors group">
-              <Phone className="h-3.5 w-3.5 mr-2 text-primary-light group-hover:scale-110 transition-transform" />
-              {BRANDING.phone}
-            </a>
-          </div>
-          <div className="flex items-center space-x-6 mt-2 md:mt-0">
-            <div className="flex items-center space-x-4 border-r border-white/10 pr-6 mr-2">
-              <a href={BRANDING.socials.facebook} className="hover:text-primary-light transition-all hover:-translate-y-0.5"><Facebook className="h-3.5 w-3.5" /></a>
-              <a href={BRANDING.socials.twitter} className="hover:text-primary-light transition-all hover:-translate-y-0.5"><Twitter className="h-3.5 w-3.5" /></a>
-              <a href={BRANDING.socials.instagram} className="hover:text-primary-light transition-all hover:-translate-y-0.5"><Instagram className="h-3.5 w-3.5" /></a>
-              <a href={BRANDING.socials.linkedin} className="hover:text-primary-light transition-all hover:-translate-y-0.5"><Linkedin className="h-3.5 w-3.5" /></a>
+      {/* Search Overlay */}
+      {isSearchOpen && (
+        <div className="fixed inset-0 z-[100] flex items-start justify-center pt-32 px-4">
+          <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => setIsSearchOpen(false)} />
+          <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200">
+            <div className="p-6 border-b border-slate-100 flex items-center">
+              <Search className="h-6 w-6 text-primary mr-4" />
+              <input
+                autoFocus
+                type="text"
+                name="header_search"
+                id="header_search"
+                aria-label="Search courses"
+                placeholder="Search for courses (e.g. MERN, Python, Java...)"
+                className="flex-1 bg-transparent border-none outline-none text-lg font-medium text-slate-900 placeholder:text-slate-400"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              {searchQuery && (
+                <button 
+                  onClick={() => setSearchQuery('')}
+                  className="p-2 hover:bg-slate-100 rounded-full transition-colors mr-2"
+                >
+                  <X className="h-4 w-4 text-slate-400" />
+                </button>
+              )}
+              <button 
+                onClick={() => setIsSearchOpen(false)}
+                className="p-2 hover:bg-slate-100 rounded-full transition-colors"
+              >
+                <ChevronDown className="h-6 w-6 text-slate-400 rotate-90" />
+              </button>
             </div>
-            <span className="hidden lg:flex items-center text-slate-400">
-              <MapPin className="h-3 w-3 mr-1.5 text-primary-light" />
-              {BRANDING.location}
-            </span>
+            
+            <div className="max-h-[60vh] overflow-y-auto p-4">
+              {!searchQuery.trim() && (
+                <div className="p-4">
+                  <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Popular Searches</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {['MERN', 'Python', 'Java', 'Full Stack', 'Web Development'].map(term => (
+                      <button
+                        key={term}
+                        onClick={() => setSearchQuery(term)}
+                        className="px-4 py-2 bg-slate-50 hover:bg-primary/10 hover:text-primary rounded-xl text-sm font-bold text-slate-600 border border-slate-100 transition-all"
+                      >
+                        {term}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {searchQuery.trim().length > 0 ? (
+                <div className="space-y-2">
+                  {(() => {
+                    const filtered = courses.filter(c => 
+                      c.title.toLowerCase().includes(searchQuery.toLowerCase().trim()) || 
+                      c.category.toLowerCase().includes(searchQuery.toLowerCase().trim()) ||
+                      (c.tools && c.tools.some(tool => tool.toLowerCase().includes(searchQuery.toLowerCase().trim())))
+                    );
+                    
+                    if (filtered.length === 0) {
+                      return (
+                        <div className="text-center py-12">
+                          <div className="bg-slate-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <Search className="h-8 w-8 text-slate-300" />
+                          </div>
+                          <p className="text-slate-500 font-bold">No courses found matching "{searchQuery}"</p>
+                          <p className="text-sm text-slate-400 mt-1">Try searching for MERN, Python, or Java</p>
+                        </div>
+                      );
+                    }
+
+                    return filtered.map(course => (
+                      <Link
+                        key={course.id}
+                        to={`/courses/${course.slug}`}
+                        onClick={() => {
+                          setIsSearchOpen(false);
+                          setSearchQuery('');
+                        }}
+                        className="flex items-center p-4 hover:bg-primary/5 rounded-2xl transition-all group border border-transparent hover:border-primary/10"
+                      >
+                        <div className="bg-primary/10 p-3 rounded-xl mr-4 group-hover:bg-primary transition-all duration-300">
+                          <GraduationCap className="h-5 w-5 text-primary group-hover:text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between">
+                            <h4 className="font-bold text-slate-900 group-hover:text-primary transition-colors">{course.title}</h4>
+                            <span className="text-[10px] font-black text-primary bg-primary/10 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                              {course.category}
+                            </span>
+                          </div>
+                          <p className="text-xs text-slate-500 mt-1 flex items-center">
+                            {course.duration} • {course.level}
+                          </p>
+                        </div>
+                      </Link>
+                    ));
+                  })()}
+                </div>
+              ) : (
+                <div className="py-8 text-center">
+                  <p className="text-slate-400 text-sm font-bold uppercase tracking-widest">Popular Searches</p>
+                  <div className="flex flex-wrap justify-center gap-2 mt-4">
+                    {['MERN Stack', 'Python', 'Java', 'Web Design', 'AWS'].map(tag => (
+                      <button
+                        key={tag}
+                        onClick={() => setSearchQuery(tag)}
+                        className="px-4 py-2 bg-slate-100 hover:bg-primary hover:text-white rounded-full text-sm font-bold text-slate-600 transition-all"
+                      >
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
-      {/* Main Header */}
-      <div
-        className={clsx(
-          'transition-all duration-500',
-          scrolled ? 'py-2.5' : 'py-5'
-        )}
-      >
-        <div className="container-custom">
+      {/* Main Header Content */}
+      <div className="px-6 md:px-8">
+        <div className="w-full">
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 group">
@@ -344,126 +432,6 @@ const Header = () => {
               >
                 ENROLL NOW
               </button>
-            </div>
-          </div>
-        </div>
-      )}
-      {/* Search Overlay */}
-      {isSearchOpen && (
-        <div className="fixed inset-0 z-[100] flex items-start justify-center pt-20 px-4">
-          <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => setIsSearchOpen(false)} />
-          <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200">
-            <div className="p-6 border-b border-slate-100 flex items-center">
-              <Search className="h-6 w-6 text-primary mr-4" />
-              <input
-                autoFocus
-                type="text"
-                name="header_search"
-                id="header_search"
-                aria-label="Search courses"
-                placeholder="Search for courses (e.g. MERN, Python, Java...)"
-                className="flex-1 bg-transparent border-none outline-none text-lg font-medium text-slate-900 placeholder:text-slate-400"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              {searchQuery && (
-                <button 
-                  onClick={() => setSearchQuery('')}
-                  className="p-2 hover:bg-slate-100 rounded-full transition-colors mr-2"
-                >
-                  <X className="h-4 w-4 text-slate-400" />
-                </button>
-              )}
-              <button 
-                onClick={() => setIsSearchOpen(false)}
-                className="p-2 hover:bg-slate-100 rounded-full transition-colors"
-              >
-                <ChevronDown className="h-6 w-6 text-slate-400 rotate-90" />
-              </button>
-            </div>
-            
-            <div className="max-h-[60vh] overflow-y-auto p-4">
-              {!searchQuery.trim() && (
-                <div className="p-4">
-                  <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Popular Searches</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {['MERN', 'Python', 'Java', 'Full Stack', 'Web Development'].map(term => (
-                      <button
-                        key={term}
-                        onClick={() => setSearchQuery(term)}
-                        className="px-4 py-2 bg-slate-50 hover:bg-primary/10 hover:text-primary rounded-xl text-sm font-bold text-slate-600 border border-slate-100 transition-all"
-                      >
-                        {term}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-              {searchQuery.trim().length > 0 ? (
-                <div className="space-y-2">
-                  {(() => {
-                    const filtered = courses.filter(c => 
-                      c.title.toLowerCase().includes(searchQuery.toLowerCase().trim()) || 
-                      c.category.toLowerCase().includes(searchQuery.toLowerCase().trim()) ||
-                      (c.tools && c.tools.some(tool => tool.toLowerCase().includes(searchQuery.toLowerCase().trim())))
-                    );
-                    
-                    if (filtered.length === 0) {
-                      return (
-                        <div className="text-center py-12">
-                          <div className="bg-slate-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <Search className="h-8 w-8 text-slate-300" />
-                          </div>
-                          <p className="text-slate-500 font-bold">No courses found matching "{searchQuery}"</p>
-                          <p className="text-sm text-slate-400 mt-1">Try searching for MERN, Python, or Java</p>
-                        </div>
-                      );
-                    }
-
-                    return filtered.map(course => (
-                      <Link
-                        key={course.id}
-                        to={`/courses/${course.slug}`}
-                        onClick={() => {
-                          setIsSearchOpen(false);
-                          setSearchQuery('');
-                        }}
-                        className="flex items-center p-4 hover:bg-primary/5 rounded-2xl transition-all group border border-transparent hover:border-primary/10"
-                      >
-                        <div className="bg-primary/10 p-3 rounded-xl mr-4 group-hover:bg-primary transition-all duration-300">
-                          <GraduationCap className="h-5 w-5 text-primary group-hover:text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center justify-between">
-                            <h4 className="font-bold text-slate-900 group-hover:text-primary transition-colors">{course.title}</h4>
-                            <span className="text-[10px] font-black text-primary bg-primary/10 px-2 py-0.5 rounded-full uppercase tracking-wider">
-                              {course.category}
-                            </span>
-                          </div>
-                          <p className="text-xs text-slate-500 mt-1 flex items-center">
-                            {course.duration} • {course.level}
-                          </p>
-                        </div>
-                      </Link>
-                    ));
-                  })()}
-                </div>
-              ) : (
-                <div className="py-8 text-center">
-                  <p className="text-slate-400 text-sm font-bold uppercase tracking-widest">Popular Searches</p>
-                  <div className="flex flex-wrap justify-center gap-2 mt-4">
-                    {['MERN Stack', 'Python', 'Java', 'Web Design', 'AWS'].map(tag => (
-                      <button
-                        key={tag}
-                        onClick={() => setSearchQuery(tag)}
-                        className="px-4 py-2 bg-slate-100 hover:bg-primary hover:text-white rounded-full text-sm font-bold text-slate-600 transition-all"
-                      >
-                        {tag}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </div>

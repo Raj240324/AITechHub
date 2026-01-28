@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FadeIn, StaggerContainer, StaggerItem, ScaleOnHover, ScrollCountUp, Marquee } from '../components/utils/Animations';
+import { FadeIn, StaggerContainer, StaggerItem, ScaleOnHover, ScrollCountUp, Marquee, Parallax } from '../components/utils/Animations';
 import { 
   ArrowRight, 
   BookOpen, 
@@ -225,49 +225,54 @@ const learningPartners = [
             </div>
             
             {/* Floating Cards */}
-            <div className="absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-xl z-20 animate-bounce-slow">
-              <div className="flex items-center space-x-3">
-                <div className="bg-orange-100 p-2 rounded-lg">
-                  <Award className="h-6 w-6 text-orange-600" />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-500 font-bold uppercase">ISO Certified</p>
-                  <p className="text-sm font-black text-slate-900">Institute</p>
+            <Parallax offset={-30} className="absolute -top-6 -right-6 z-20">
+              <div className="bg-white p-4 rounded-2xl shadow-xl animate-bounce-slow">
+                <div className="flex items-center space-x-3">
+                  <div className="bg-orange-100 p-2 rounded-lg">
+                    <Award className="h-6 w-6 text-orange-600" />
+                  </div>
+         
+                  <div>
+                    <p className="text-xs text-slate-500 font-bold uppercase">ISO Certified</p>
+                    <p className="text-sm font-black text-slate-900">Institute</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Parallax>
             
-            <div className="absolute -bottom-10 -left-10 bg-white p-6 rounded-2xl shadow-xl z-20">
-              <div className="flex items-center space-x-4">
-                <div className="bg-blue-100 p-3 rounded-xl">
-                  <Briefcase className="h-8 w-8 text-blue-600" />
-                </div>
-                <div>
-                  <p className="text-2xl font-black text-slate-900 leading-none">100%</p>
-                  <p className="text-xs text-slate-500 font-bold uppercase mt-1">Job Assistance</p>
+            <Parallax offset={40} className="absolute -bottom-10 -left-10 z-20">
+              <div className="bg-white p-6 rounded-2xl shadow-xl">
+                <div className="flex items-center space-x-4">
+                  <div className="bg-blue-100 p-3 rounded-xl">
+                    <Briefcase className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-black text-slate-900 leading-none">100%</p>
+                    <p className="text-xs text-slate-500 font-bold uppercase mt-1">Job Assistance</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Parallax>
           </FadeIn>
         }
       >
         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          <Link to="/courses" className="btn-primary text-lg px-8 py-4 flex items-center justify-center">
-            Explore Courses <ArrowRight className="ml-2 h-5 w-5" />
+          <Link to="/courses" className="btn-primary px-6 py-3.5 flex items-center justify-center font-bold whitespace-nowrap">
+            Explore Courses <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
           <button 
             onClick={() => {
               const el = document.getElementById('trending-courses');
               el?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="btn-secondary text-lg px-8 py-4 flex items-center justify-center border-2 border-primary/20 hover:border-primary transition-all group"
+            className="btn-secondary px-6 py-3.5 flex items-center justify-center border-2 border-primary/20 hover:border-primary transition-all group font-bold whitespace-nowrap"
           >
-            <Download className="mr-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
+            <Download className="mr-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
             Download Syllabus
           </button>
           <button 
             onClick={() => openModal()}
-            className="btn-secondary text-lg px-8 py-4 flex items-center justify-center border-2"
+            className="btn-secondary px-6 py-3.5 flex items-center justify-center border-2 font-bold whitespace-nowrap"
           >
             Book Free Demo
           </button>
@@ -380,21 +385,27 @@ const learningPartners = [
                 </button>
               </div>
               <div className="relative">
-                <div className="aspect-[4/3] bg-white rounded-3xl shadow-2xl p-8 flex items-center justify-center border border-slate-100">
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <Award className="h-12 w-12 text-primary" />
-                    </div>
-                    <div className="text-2xl font-black text-slate-900 mb-2">Authenticated by</div>
-                    <div className="text-primary font-bold tracking-widest uppercase text-sm">{BRANDING.fullName}</div>
-                    <div className="mt-8 pt-8 border-t border-slate-100">
-                      <p className="text-slate-500 text-sm font-medium">Verified Training Provider</p>
+                <Parallax offset={20}>
+                  <div className="aspect-[4/3] bg-white rounded-3xl shadow-2xl p-8 flex items-center justify-center border border-slate-100">
+                    <div className="text-center">
+                      <div className="w-24 h-24 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <Award className="h-12 w-12 text-primary" />
+                      </div>
+                      <div className="text-2xl font-black text-slate-900 mb-2">Authenticated by</div>
+                      <div className="text-primary font-bold tracking-widest uppercase text-sm">{BRANDING.fullName}</div>
+                      <div className="mt-8 pt-8 border-t border-slate-100">
+                        <p className="text-slate-500 text-sm font-medium">Verified Training Provider</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Parallax>
                 {/* Decorative elements */}
-                <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
-                <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl" />
+                <Parallax offset={-40} className="absolute -bottom-6 -left-6 z-[-1]">
+                  <div className="w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
+                </Parallax>
+                <Parallax offset={-60} className="absolute -top-6 -right-6 z-[-1]">
+                  <div className="w-32 h-32 bg-blue-500/10 rounded-full blur-3xl" />
+                </Parallax>
               </div>
             </div>
           </div>
@@ -446,22 +457,30 @@ const learningPartners = [
             <div className="order-2 lg:order-1">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
-                  <div className="aspect-square bg-slate-50 rounded-3xl p-8 flex flex-col justify-end group hover:bg-primary transition-all duration-500">
-                    <Globe className="h-10 w-10 text-primary mb-4 group-hover:text-white" />
-                    <p className="font-bold text-lg leading-tight group-hover:text-white">Global Curriculum, <br />Local Context</p>
-                  </div>
-                  <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&q=80&w=400" alt="Software Development Training" className="h-full w-full object-cover" />
-                  </div>
+                  <FadeIn direction="up" delay={0.1}>
+                    <div className="aspect-square bg-slate-50 rounded-3xl p-8 flex flex-col justify-end group hover:bg-primary transition-all duration-500">
+                      <Globe className="h-10 w-10 text-primary mb-4 group-hover:text-white" />
+                      <p className="font-bold text-lg leading-tight group-hover:text-white">Global Curriculum, <br />Local Context</p>
+                    </div>
+                  </FadeIn>
+                  <FadeIn direction="up" delay={0.2}>
+                    <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-lg">
+                      <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&q=80&w=400" alt="Software Development Training" className="h-full w-full object-cover" />
+                    </div>
+                  </FadeIn>
                 </div>
                 <div className="space-y-4 pt-12">
-                  <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=400" alt="Students Collaborating" className="h-full w-full object-cover" />
-                  </div>
-                  <div className="aspect-square bg-slate-900 rounded-3xl p-8 flex flex-col justify-end group hover:bg-primary transition-all duration-500">
-                    <MessageSquare className="h-10 w-10 text-primary mb-4 group-hover:text-white" />
-                    <p className="font-bold text-lg leading-tight text-white group-hover:text-white">Bilingual <br />Support (தமிழ் & English)</p>
-                  </div>
+                  <FadeIn direction="up" delay={0.3}>
+                    <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-lg">
+                      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=400" alt="Students Collaborating" className="h-full w-full object-cover" />
+                    </div>
+                  </FadeIn>
+                  <FadeIn direction="up" delay={0.4}>
+                    <div className="aspect-square bg-slate-900 rounded-3xl p-8 flex flex-col justify-end group hover:bg-primary transition-all duration-500">
+                      <MessageSquare className="h-10 w-10 text-primary mb-4 group-hover:text-white" />
+                      <p className="font-bold text-lg leading-tight text-white group-hover:text-white">Bilingual <br />Support (தமிழ் & English)</p>
+                    </div>
+                  </FadeIn>
                 </div>
               </div>
             </div>
@@ -516,8 +535,12 @@ const learningPartners = [
       {/* Learning Methodology Section */}
       <section className="py-24 bg-slate-900 relative overflow-hidden">
         {/* Decorative Background */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[120px] -ml-32 -mb-32" />
+        <Parallax offset={20} className="absolute top-0 right-0 w-1/2 h-full z-0">
+            <div className="w-full h-full bg-primary/5 -skew-x-12 translate-x-1/2" />
+        </Parallax>
+        <Parallax offset={-30} className="absolute bottom-0 left-0 w-64 h-64 z-0">
+            <div className="w-full h-full bg-blue-500/10 rounded-full blur-[120px]" />
+        </Parallax>
 
         <div className="container-custom relative z-10">
           <div className="max-w-3xl mb-16">

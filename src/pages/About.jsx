@@ -5,7 +5,7 @@ import { useModal } from '../context/ModalContext';
 import { BRANDING } from '../data/branding';
 
 import Hero from '../components/ui/Hero';
-import { FadeIn, StaggerContainer, StaggerItem, ScaleOnHover, ScrollCountUp } from '../components/utils/Animations';
+import { FadeIn, StaggerContainer, StaggerItem, ScaleOnHover, ScrollCountUp, Parallax } from '../components/utils/Animations';
 
 const About = () => {
   const { openModal } = useModal();
@@ -143,22 +143,30 @@ const About = () => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="aspect-[4/5] bg-slate-100 rounded-3xl overflow-hidden shadow-inner">
-                  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80" alt="Students collaborating" className="h-full w-full object-cover" />
-                </div>
-                <div className="aspect-square bg-primary rounded-3xl p-8 flex flex-col justify-end text-white shadow-xl shadow-primary/20">
-                  <Lightbulb className="h-10 w-10 mb-4" />
-                  <p className="font-bold text-lg leading-tight text-white">Innovation in every lesson.</p>
-                </div>
+                <Parallax offset={20}>
+                  <div className="aspect-[4/5] bg-slate-100 rounded-3xl overflow-hidden shadow-inner">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80" alt="Students collaborating" className="h-full w-full object-cover" />
+                  </div>
+                </Parallax>
+                <Parallax offset={-20}>
+                  <div className="aspect-square bg-primary rounded-3xl p-8 flex flex-col justify-end text-white shadow-xl shadow-primary/20">
+                    <Lightbulb className="h-10 w-10 mb-4" />
+                    <p className="font-bold text-lg leading-tight text-white">Innovation in every lesson.</p>
+                  </div>
+                </Parallax>
               </div>
               <div className="space-y-4 pt-12">
-                <div className="aspect-square bg-slate-900 rounded-3xl p-8 flex flex-col justify-end text-white shadow-xl shadow-slate-900/20">
-                  <Target className="h-10 w-10 mb-4 text-primary-light" />
-                  <p className="font-bold text-lg leading-tight text-white">Goal-oriented training.</p>
-                </div>
-                <div className="aspect-[4/5] bg-slate-100 rounded-3xl overflow-hidden shadow-inner">
-                  <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80" alt="Classroom" className="h-full w-full object-cover" />
-                </div>
+                <Parallax offset={20}>
+                  <div className="aspect-square bg-slate-900 rounded-3xl p-8 flex flex-col justify-end text-white shadow-xl shadow-slate-900/20">
+                    <Target className="h-10 w-10 mb-4 text-primary-light" />
+                    <p className="font-bold text-lg leading-tight text-white">Goal-oriented training.</p>
+                  </div>
+                </Parallax>
+                <Parallax offset={-20}>
+                  <div className="aspect-[4/5] bg-slate-100 rounded-3xl overflow-hidden shadow-inner">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80" alt="Classroom" className="h-full w-full object-cover" />
+                  </div>
+                </Parallax>
               </div>
             </div>
           </div>
@@ -307,8 +315,12 @@ const About = () => {
               </div>
             </div>
             {/* Decorative background elements */}
-            <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
+            <Parallax offset={-30} className="absolute top-0 left-0 w-64 h-64 z-0">
+                <div className="w-full h-full bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+            </Parallax>
+            <Parallax offset={30} className="absolute bottom-0 right-0 w-96 h-96 z-0">
+                <div className="w-full h-full bg-white/5 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
+            </Parallax>
           </div>
         </div>
       </section>
